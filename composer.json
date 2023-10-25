@@ -1,0 +1,26 @@
+{
+    "name": "devertix/laravel-base",
+    "description": "This is the description of the package.",
+    "type": "project",
+    "license": "MIT",
+    "authors": [{
+        "name": "Norbert Mozsar",
+        "email": "norbert.mozsar@devertix.com"
+    }],
+    "autoload": {
+        "psr-4": {
+            "Devertix\\LaravelBase\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+        }
+    },
+    "require": {
+        "ext-json": "*",
+        "justinrainbow/json-schema": "^5.2"
+    },
+    "require-dev": {},
+    "extra": {
+    }
+}
