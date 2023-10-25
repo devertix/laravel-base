@@ -92,7 +92,7 @@ abstract class BaseResourceController extends Controller
     {
         $meta = $response->meta;
         $response->meta = new stdClass;
-        $response->meta->links = $meta->links;
+        unset($response->links);
         $response->meta->pagination = new stdClass;
         $response->meta->pagination->count = $meta->total;
         $response->meta->pagination->current_page = $meta->current_page;
