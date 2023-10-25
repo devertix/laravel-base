@@ -90,12 +90,15 @@ abstract class BaseResourceController extends Controller
 
     protected function addPaginationToResponse($response)
     {
+        $meta = $response->meta;
+        $response->meta = new stdClass;
+        $response->meta->links = $meta->links;
         $response->meta->pagination = new stdClass;
-        $response->meta->pagination->count = $response->meta->total;
-        $response->meta->pagination->current_page = $response->meta->current_page;
-        $response->meta->pagination->per_page = $response->meta->per_page;
-        $response->meta->pagination->total = $response->meta->total;
-        $response->meta->pagination->total_pages = $response->meta->last_page;
+        $response->meta->pagination->count = $meta->total;
+        $response->meta->pagination->current_page = $meta->current_page;
+        $response->meta->pagination->per_page = $meta->per_page;
+        $response->meta->pagination->total = $meta->total;
+        $response->meta->pagination->total_pages = $meta->last_page;
         return $response;
     }
 
