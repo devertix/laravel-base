@@ -18,7 +18,13 @@ abstract class BaseResource extends JsonResource implements BaseResourceInterfac
             'type' => $this->getResourceKey(),
             'id' => $this->getId(),
             'attributes' => $this->getAttributes($request),
+            ...$this->getMeta($request),
         ];
+    }
+
+    public function getMeta($request)
+    {
+        return [];
     }
 
     protected function getId()
